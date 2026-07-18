@@ -23,6 +23,8 @@
   .copy{cursor:pointer;background:#23306e;border:1px solid #35468f;color:var(--gold);font-size:12px;padding:3px 12px;border-radius:6px}
   .copy.ok{background:#123d2e;color:var(--green);border-color:#1e6b4f}
   details{margin-top:10px} summary{cursor:pointer;color:var(--muted);font-size:13px}
+  .mk{background:#0d2e22;border:1px solid #1e6b4f;color:#7ff0c0;font-size:14px;border-radius:8px;padding:6px 11px;margin:0 0 4px;display:inline-block}
+  .mk b{color:#fff}
 </style>
 </head>
 <body>
@@ -59,7 +61,7 @@
 
 <script>
 const P=[
- {id:"010",name:"Om Chanting for Sleep",kw:"om chanting for sleep",deity:"Universal",
+ {id:"010",name:"Om Chanting for Sleep",kw:"om chanting for sleep",deity:"Universal",dur:"8 Hours",
   style:"Soothing continuous Om chanting for deep sleep, soft layered male and female voices gently rising and falling on a slow flowing melody, warm tanpura drone, faint distant temple bells, slow gentle 50 bpm, calm dark healing and beautiful, hypnotic and dreamy, keeps you listening, no drums, no fade out",
   lyr:"[Chorus]\nOm\nOm\nOm\nOm\n\n[Chorus]\nOm\nOm\nOm\nOm"},
  {id:"J1",name:"Jai Jagannath (Odia Bhajan)",kw:"odia bhajan jagannath thakur",deity:"Jagannath",
@@ -68,10 +70,10 @@ const P=[
  {id:"J2",name:"Jagannath Powerful Mantra (Wish Fulfillment)",kw:"jagannath most powerful mantra",deity:"Jagannath",
   style:"Powerful sacred Jagannath mantra kirtan, resonant male lead answered by male and female chorus in call and response, mardala drum, harmonium, temple bells, conch, majestic groove 68 bpm, memorable singable tune, devotional and slowly building, no fade out",
   lyr:"[Verse]\nNeela-chala Nivaa-saya\nNit-yaya Para-maatmane\n\n[Chorus]\nBala-bhadra Su-bhadra-byam\nJagan-naat-haaya Te Namah\nBala-bhadra Su-bhadra-byam\nJagan-naat-haaya Te Namah\n\n[Verse]\nNeela-chala Nivaa-saya\nNit-yaya Para-maatmane\n\n[Chorus]\nBala-bhadra Su-bhadra-byam\nJagan-naat-haaya Te Namah\nBala-bhadra Su-bhadra-byam\nJagan-naat-haaya Te Namah"},
- {id:"M1",name:"Mahamrityunjaya Mantra (Healing)",kw:"healing mantras and chants for the soul",deity:"Shiva",
+ {id:"M1",name:"Mahamrityunjaya Mantra (Healing)",kw:"healing mantras and chants for the soul",deity:"Shiva",dur:"3 Hours",
   style:"Sacred healing Mahamrityunjaya kirtan, warm male lead answered by male and female chorus in call and response, tanpura drone, harmonium, soft mridanga, temple bells, calming groove 66 bpm, memorable singable tune, healing meditative and slowly building, no fade out",
   lyr:"[Verse]\nOm Try-am-bakam Yaja-mahe\nSu-gandhim Pushti Vardha-nam\n\n[Chorus]\nOor-va-rooka-miva Bandha-nan\nMrit-yor Muksh-iya Maam-ritaat\nOor-va-rooka-miva Bandha-nan\nMrit-yor Muksh-iya Maam-ritaat\n\n[Verse]\nOm Try-am-bakam Yaja-mahe\nSu-gandhim Pushti Vardha-nam\n\n[Chorus]\nOor-va-rooka-miva Bandha-nan\nMrit-yor Muksh-iya Maam-ritaat\nOor-va-rooka-miva Bandha-nan\nMrit-yor Muksh-iya Maam-ritaat"},
- {id:"P1",name:"Shanti Mantra (Deep Inner Peace)",kw:"mantras for deep inner peace",deity:"Universal",
+ {id:"P1",name:"Shanti Mantra (Deep Inner Peace)",kw:"mantras for deep inner peace",deity:"Universal",dur:"3 Hours",
   style:"Serene melodic Shanti mantra kirtan, soft male and female lead and chorus in gentle call and response, tanpura, bansuri flute, veena, soft tabla, tranquil groove 62 bpm, sweet memorable tune, calming healing and gently flowing, no fade out",
   lyr:"[Verse]\nAsato Ma Sad Gamaya\nTamaso Ma Jyotir Gamaya\n\n[Chorus]\nMrityor Ma Amritam Gamaya\nOm Shanti Shanti Shanti\nMrityor Ma Amritam Gamaya\nOm Shanti Shanti Shanti\n\n[Verse]\nAsato Ma Sad Gamaya\nTamaso Ma Jyotir Gamaya\n\n[Chorus]\nMrityor Ma Amritam Gamaya\nOm Shanti Shanti Shanti\nMrityor Ma Amritam Gamaya\nOm Shanti Shanti Shanti"},
  {id:"S1",name:"Shree Swami Samarth Mantra",kw:"swami samarth songs",deity:"Swami Samarth",
@@ -86,13 +88,13 @@ const P=[
  {id:"005",name:"Gayatri Mantra",kw:"gayatri mantra 108 times fast",deity:"Universal",
   style:"Sacred melodic Gayatri Mantra kirtan, male lead answered by blended male and female chorus, tanpura, bansuri flute, soft mridanga, subtle strings, steady gentle groove 72 bpm, memorable singable tune, uplifting meditative and building, no fade out",
   lyr:"[Verse]\nOm Bhur Bhuvah Swaha\nTat Savitur Varenyam\n\n[Chorus]\nOm Bhur Bhuvah Swaha\nTat Savitur Varenyam\nBhargo Devasya Dhimahi\nDhiyo Yo Nah Prachodayat\n\n[Verse]\nBhargo Devasya Dhimahi\nDhiyo Yo Nah Prachodayat\n\n[Chorus]\nOm Bhur Bhuvah Swaha\nTat Savitur Varenyam\nBhargo Devasya Dhimahi\nDhiyo Yo Nah Prachodayat"},
- {id:"A1",name:"Krishna Flute (Instrumental)",kw:"krishna flute music for peace",deity:"Krishna",inst:1,
+ {id:"A1",name:"Krishna Flute (Instrumental)",kw:"krishna flute music for peace",deity:"Krishna",inst:1,dur:"2 Hours",
   style:"Peaceful Krishna bansuri flute instrumental, solo bamboo flute lead with a gentle memorable melody, tanpura drone, soft tabla groove, gentle temple ambience, serene flowing 64 bpm, meditative and beautiful, no fade out",
   lyr:"TURN INSTRUMENTAL ON. Leave the Lyrics box EMPTY."},
- {id:"009",name:"Saraswati Mantra (Study)",kw:"saraswati mantra for study",deity:"Saraswati",
+ {id:"009",name:"Saraswati Mantra (Study)",kw:"saraswati mantra for study",deity:"Saraswati",dur:"2 Hours",
   style:"Gentle melodic Saraswati kirtan, soft female lead answered by female chorus in call and response, veena, bansuri flute, soft tabla, clear focusing groove 66 bpm, sweet singable tune, serene and light, no fade out",
   lyr:"[Verse]\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\n\n[Chorus]\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\n\n[Verse]\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\n\n[Chorus]\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah"},
- {id:"001",name:"Om Namo Bhagavate Vasudevaya",kw:"krishna mantra for anxiety",deity:"Krishna",
+ {id:"001",name:"Om Namo Bhagavate Vasudevaya",kw:"krishna mantra for anxiety",deity:"Krishna",dur:"2 Hours",
   style:"Peaceful melodic Krishna kirtan, warm male lead answered by male and female chorus in call and response, tanpura drone, soft tabla, bansuri flute, temple bells, calming groove 68 bpm, soothing memorable tune, meditative and gently building, no fade out",
   lyr:"[Verse]\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\n\n[Chorus]\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\n\n[Verse]\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\n\n[Chorus]\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya"},
  {id:"003",name:"Om Hanumate Namah",kw:"hanuman mantra for strength",deity:"Hanuman",
@@ -138,7 +140,7 @@ const P=[
 
 const AUTH=" Authentic Hindu Sanatan devotional bhajan, North Indian classical raga-based, soft sweet soothing and enchanting voice with clear traditional Sanskrit pronunciation, sacred temple atmosphere, only traditional Indian instruments (tanpura, sitar, sarangi, bansuri, veena, santoor, tabla, mridanga, harmonium, temple bells); strictly no western pop, no EDM or synths, no qawwali or sufi, no gospel or church choir — purely Indian classical devotional.";
 const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-const LEN=v=>/sleep/.test(v.kw)?"8 Hours":"1 Hour";
+const LEN=v=>v.dur?v.dur:(/sleep/.test(v.kw)?"8 Hours":"1 Hour");
 const tc=s=>s.replace(/\b\w/g,c=>c.toUpperCase());
 const dw=v=>v.deity.toLowerCase();
 const seoTitle=v=>`${tc(v.kw)} 🕉️ ${LEN(v)} Peaceful Chant for Meditation, Peace & Positive Energy | Deepmala Bhajans`;
@@ -158,7 +160,7 @@ P.forEach((v,i)=>{
   const style=v.inst?v.style:v.style+AUTH;
   const s=document.createElement("div");s.className="song";
   const due=v.due?` <span class="due">(${v.due})</span>`:"";
-  s.innerHTML=`<h3><span class="num">${i+1}</span>${v.name}${due}</h3>`;
+  s.innerHTML=`<h3><span class="num">${i+1}</span>${v.name}${due}</h3><div class="mk">🎬 In Filmora, make this video <b>${LEN(v)}</b> long</div>`;
   s.appendChild(block("STYLE → paste in Suno Styles box",style));
   s.appendChild(block("LYRICS → paste in Suno Lyrics box",v.lyr));
   const det=document.createElement("details");
