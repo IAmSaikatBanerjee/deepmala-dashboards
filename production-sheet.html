@@ -57,71 +57,48 @@
 </div></header>
 <div class="wrap">
 
-  <div class="goals">
-    <div class="goal">🎯 <b>Goal 1 — Found:</b> only high-demand, winnable keywords (verified on real YouTube view counts). Produce 🟢 GREEN first.</div>
-    <div class="goal">🎧 <b>Goal 2 — Watched:</b> audio must be addictive &amp; loopable so people leave it playing. Long background loops = the fastest path to 4,000 hours.</div>
+  <div class="box" style="font-size:15px">
+    <b>3 steps:</b> &nbsp;1️⃣ Pick a song below &nbsp;→&nbsp; 2️⃣ In Suno: <b>Create → Custom</b>, paste <b>STYLE</b> into the "Styles" box + <b>LYRICS</b> into the "Lyrics" box, turn <b>Instrumental OFF</b>, generate &nbsp;→&nbsp; 3️⃣ Loop the 2–3 min clip to 1 hr in Filmora, upload.
+    &nbsp; <a href="#" onclick="document.getElementById('more').open=true;this.blur();return false;">more tips ▾</a>
   </div>
-
-  <h2>⚠️ Suno rules — read once (this is what makes or breaks the audio)</h2>
-  <div class="box" style="border-color:#7a5a10;background:#211900">
-    <ul>
-      <li><b>STYLE box</b> = ALL the sound direction (instruments, mood, bpm, "no fade out"). <b>LYRICS box = words ONLY.</b></li>
-      <li><b>Never put instrument/mood tags like <code>[tanpura drone]</code> in the Lyrics box</b> — Suno will literally sing them as gibberish. Only structure tags <code>[Chorus] [Verse] [Instrumental]</code> are allowed there.</li>
-      <li><b>No dots or "……"</b> — they cause garbled stretched vocals.</li>
-      <li>Custom Mode · Instrumental <b>OFF</b> (except the flute card) · model <b>v4.5</b>.</li>
+  <details id="more" class="box" style="margin-top:0">
+    <summary style="cursor:pointer;color:var(--gold)">ℹ️ Tips &amp; the why (optional — read once)</summary>
+    <ul style="margin-top:10px">
+      <li><b>Goal:</b> 4,000 watch-hours. Long background loops (sleep/study/chant) = fastest path. Produce 🟢 GREEN cards first.</li>
+      <li><b>Suno free:</b> Custom mode gives you the "Styles" and "Lyrics" boxes. Paste as-is — already formatted right.</li>
+      <li><b>Never edit the lyrics format</b> — only <code>[Chorus]/[Verse]/[Instrumental]</code> tags belong there, no instrument words, no dots.</li>
+      <li><b>Sound identity (auto-added to every Style):</b> authentic Hindu Sanatan, Indian classical, soft sweet enchanting voice, Sanskrit diction, temple feel. No western pop/synth, no qawwali/sufi, no gospel/church. Serving the listener &gt; the numbers.</li>
+      <li><b>On upload:</b> open each card's "YouTube" section for ready title/tags/description. Set AI-content disclosure = YES.</li>
     </ul>
-  </div>
+  </details>
 
-  <h2>▶ How to use this sheet</h2>
-  <div class="box">
-    <ul>
-      <li><b>Pick a card</b> (ranked by watch-hour ROI). Copy <b>STYLE</b> → Style box, <b>LYRICS</b> → Lyrics box. That's it — already formatted correctly.</li>
-      <li><b>Generate a clean 2–3 min take</b>, keep the better of the 2. Then <b>loop it in Filmora to 1 hour</b> (8 hrs for sleep). Don't chase length inside Suno.</li>
-      <li>Each card also gives ready <b>YouTube TITLE, TAGS, DESCRIPTION</b> (copy buttons). Edit the affiliate-links line. <b>Set AI-content disclosure = YES.</b></li>
-    </ul>
-  </div>
-
-  <h2>🎧 Make it addictive (watch-hour tricks)</h2>
-  <div class="box">
-    <ul>
-      <li><b>"No fade out"</b> is in every Style so the ending stays full-volume — that's what makes the Filmora loop join invisible.</li>
-      <li><b>Steady low BPM (60–74; sleep 50)</b> — hypnotic, non-jarring, easy to leave on.</li>
-      <li><b>One mantra, repeated</b> — repetition is the hook. Don't mix mantras in one track.</li>
-      <li><b>Authentic instruments only</b> (tanpura, tabla, harmonium, bansuri, veena, bells). No western drums/synths.</li>
-      <li><b>Use-case titling</b> — "for sleep / study / work / meditation / puja" → people press play and walk away = max minutes/view.</li>
-      <li><b>🕉️ Sound identity (baked into every Style):</b> authentic Hindu Sanatan, North-Indian classical raga-based, soft sweet enchanting voice, pure Sanskrit diction, temple atmosphere. Only traditional Indian instruments — <b>no western pop, synth, qawwali/sufi, or gospel/church sound.</b> This is for Sanatani listeners — the audio must feel sacred and true to our culture. Serving the listener &gt; the numbers.</li>
-    </ul>
-  </div>
-
-  <h2>🎵 Prompts — ranked by watch-hour ROI</h2>
+  <h2>🎵 Songs — ranked (produce top-down)</h2>
   <div class="grid" id="cards"></div>
 
-  <h2>🔥 Trend-jack calendar — produce ahead of the wave</h2>
-  <div class="box" style="margin-bottom:6px">Produce-by = ~10 days before the festival (gives the algorithm time to rank you before peak searches). 🟣 = act now.</div>
-  <table id="cal"><thead><tr>
-    <th>Festival</th><th>Date</th><th>Days out</th><th>Produce by</th><th>Keywords</th><th>Deity / style seed</th>
-  </tr></thead><tbody></tbody></table>
-
-  <h2>🔥 Trend-jack prompts — ready to paste (produce ahead of each festival)</h2>
+  <h2>🔥 Festival songs — produce ahead of each date</h2>
+  <details class="box" style="margin-bottom:10px"><summary style="cursor:pointer;color:var(--gold)">📅 Festival dates &amp; produce-by calendar</summary>
+    <div style="margin:8px 0 6px;font-size:13px;color:var(--muted)">Produce ~10 days before so the algorithm ranks you before peak searches. 🟣 = act now.</div>
+    <table id="cal"><thead><tr>
+      <th>Festival</th><th>Date</th><th>Days out</th><th>Produce by</th><th>Keywords</th><th>Deity</th>
+    </tr></thead><tbody></tbody></table>
+  </details>
   <div class="grid" id="trendcards"></div>
 
-  <h2>🎬 Filmora loop workflow</h2>
-  <ol class="steps">
-    <li>Import the Suno mp3. Trim to a clean bar (cut any intro silence / messy tail so the join is smooth).</li>
-    <li>Copy the clip and paste end-to-end (or right-click → repeat) until the timeline hits 1 hour (8 hrs for sleep). Crossfade ~0.5s at each join if you hear a seam.</li>
-    <li>Add your still image / slow zoom (Ken Burns) of the deity as the video track — one calm visual is enough.</li>
-    <li>Export 1080p, 24–30fps. For a Short: duplicate, crop 9:16, trim to 30–45s of the strongest passage.</li>
-    <li>Upload → title with keyword + "1 Hour" → paste SEO description + affiliate links → thumbnail → AI-disclosure YES.</li>
-  </ol>
-
-  <h2>🗓️ Suggested 3-week schedule (3–5/day pace optional; steady beats bursty)</h2>
-  <div class="box">
+  <details class="box"><summary style="cursor:pointer;color:var(--gold);font-size:16px">🎬 Filmora loop workflow + 3-week schedule</summary>
+    <ol class="steps" style="margin-top:12px">
+      <li>Import the Suno mp3. Trim to a clean bar (cut any intro silence / messy tail so the join is smooth).</li>
+      <li>Copy the clip and paste end-to-end (or right-click → repeat) until the timeline hits 1 hour (8 hrs for sleep). Crossfade ~0.5s at each join if you hear a seam.</li>
+      <li>Add your still image / slow zoom (Ken Burns) of the deity as the video track — one calm visual is enough.</li>
+      <li>Export 1080p, 24–30fps. For a Short: duplicate, crop 9:16, trim to 30–45s of the strongest passage.</li>
+      <li>Upload → title with keyword + "1 Hour" → paste description + affiliate links → thumbnail → AI-disclosure YES.</li>
+    </ol>
+    <div style="margin-top:10px"><b>3-week schedule:</b>
     <ul>
-      <li><b>Week 1:</b> the 8-hr Sleep loop + top 🟢 evergreen (Shiva 108, Hare Krishna, Gayatri, Krishna-anxiety, Flute) + <b>Guru Purnima</b> (trend, due now).</li>
-      <li><b>Week 2:</b> remaining 🟢 (Hanuman, Durga, Saraswati-study) + start <b>Raksha Bandhan</b> &amp; <b>Janmashtami</b> prep.</li>
-      <li><b>Week 3:</b> 🟡 mixed (Lakshmi, Ganesha, Achyutam, Govind) for data + publish the two festival tracks + <b>Ganesh Chaturthi</b> prep.</li>
-    </ul>
-  </div>
+      <li><b>Week 1:</b> 8-hr Sleep + top 🟢 (Shiva 108, Hare Krishna, Gayatri, Krishna-anxiety, Flute) + <b>Guru Purnima</b> (due now).</li>
+      <li><b>Week 2:</b> remaining 🟢 (Hanuman, Durga, Saraswati-study) + start <b>Raksha Bandhan</b> &amp; <b>Janmashtami</b>.</li>
+      <li><b>Week 3:</b> 🟡 (Lakshmi, Ganesha, Achyutam, Govind) for data + publish festival tracks + <b>Ganesh Chaturthi</b>.</li>
+    </ul></div>
+  </details>
 
   <p style="color:var(--muted);font-size:12px;margin-top:30px">Source data: real YouTube-API demand check (<code>factory/demand_report.json</code>) + festival calendar (drikpanchang, New Delhi). Full prompt playbook: <code>bhajan-factory/SUNO_PROMPTS.md</code>. Re-verify tithi dates within a couple days of each festival.</p>
 </div>
@@ -227,11 +204,13 @@ function makeCard(v,opts){const d=document.createElement("div");d.className="car
        <div class="tags">${v.win==="g"?'<span class="tag g">🟢 winnable</span>':'<span class="tag y">🟡 mixed</span>'}<span class="tag">demand ${v.demand}</span><span class="tag hrs">⏱ ${v.hrs}</span>${v.trend?'<span class="tag trend">🔥 trend</span>':''}</div>`;
   const title=seoTitle(v), tags=seoTags(v), desc=seoDesc(v), style=fullStyle(v);
   d.innerHTML=`${head}
-    <div class="plabel">🎵 SUNO — STYLE <button class="copy">copy</button></div><pre>${esc(style)}</pre>
-    <div class="plabel">🎵 SUNO — LYRICS <button class="copy">copy</button></div><pre>${esc(v.lyr)}</pre>
-    <div class="plabel">▶ YOUTUBE — TITLE <button class="copy">copy</button></div><pre>${esc(title)}</pre>
-    <div class="plabel">▶ YOUTUBE — TAGS <button class="copy">copy</button></div><pre>${esc(tags)}</pre>
-    <div class="plabel">▶ YOUTUBE — DESCRIPTION <button class="copy">copy</button></div><pre>${esc(desc)}</pre>`;
+    <div class="plabel">STYLE — paste in Suno "Styles" box <button class="copy">copy</button></div><pre>${esc(style)}</pre>
+    <div class="plabel">LYRICS — paste in Suno "Lyrics" box <button class="copy">copy</button></div><pre>${esc(v.lyr)}</pre>
+    <details><summary>▶ YouTube title / tags / description (for when you upload)</summary>
+      <div class="plabel">TITLE <button class="copy">copy</button></div><pre>${esc(title)}</pre>
+      <div class="plabel">TAGS <button class="copy">copy</button></div><pre>${esc(tags)}</pre>
+      <div class="plabel">DESCRIPTION <button class="copy">copy</button></div><pre>${esc(desc)}</pre>
+    </details>`;
   const [bS,bL,bT,bTg,bD]=d.querySelectorAll(".copy");
   bS.onclick=()=>cp(bS,style); bL.onclick=()=>cp(bL,v.lyr);
   bT.onclick=()=>cp(bT,title); bTg.onclick=()=>cp(bTg,tags); bD.onclick=()=>cp(bD,desc);
