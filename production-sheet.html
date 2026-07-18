@@ -89,6 +89,7 @@
       <li><b>One mantra, repeated</b> — repetition is the hook. Don't mix mantras in one track.</li>
       <li><b>Authentic instruments only</b> (tanpura, tabla, harmonium, bansuri, veena, bells). No western drums/synths.</li>
       <li><b>Use-case titling</b> — "for sleep / study / work / meditation / puja" → people press play and walk away = max minutes/view.</li>
+      <li><b>🕉️ Sound identity (baked into every Style):</b> authentic Hindu Sanatan, North-Indian classical raga-based, soft sweet enchanting voice, pure Sanskrit diction, temple atmosphere. Only traditional Indian instruments — <b>no western pop, synth, qawwali/sufi, or gospel/church sound.</b> This is for Sanatani listeners — the audio must feel sacred and true to our culture. Serving the listener &gt; the numbers.</li>
     </ul>
   </div>
 
@@ -193,6 +194,11 @@ const T=[
   lyr:"[Chorus]\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\n\n[Instrumental]\n\n[Chorus]\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah"},
 ];
 
+// Authenticity clause appended to EVERY Style box — guarantees an authentic
+// Hindu / Sanatan Indian-classical sound, soft & enchanting, no non-dharmic influence.
+const AUTH=" Authentic Hindu Sanatan devotional bhajan, North Indian classical raga-based, soft sweet soothing and enchanting voice with clear traditional Sanskrit pronunciation, sacred temple atmosphere, only traditional Indian instruments (tanpura, sitar, sarangi, bansuri, veena, santoor, tabla, mridanga, harmonium, temple bells); strictly no western pop, no EDM or synths, no qawwali or sufi, no gospel or church choir — purely Indian classical devotional.";
+const fullStyle=v=>v.style+AUTH;
+
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 function cp(btn,txt){navigator.clipboard.writeText(txt).then(()=>{btn.textContent="copied ✓";btn.classList.add("ok");
   setTimeout(()=>{btn.textContent="copy";btn.classList.remove("ok");},1400);});}
@@ -219,15 +225,15 @@ function makeCard(v,opts){const d=document.createElement("div");d.className="car
     : `<div class="rank">${v.r}</div>
        <div class="deity">${v.deity} · #${v.id}</div><h3>🎯 ${v.kw}</h3>
        <div class="tags">${v.win==="g"?'<span class="tag g">🟢 winnable</span>':'<span class="tag y">🟡 mixed</span>'}<span class="tag">demand ${v.demand}</span><span class="tag hrs">⏱ ${v.hrs}</span>${v.trend?'<span class="tag trend">🔥 trend</span>':''}</div>`;
-  const title=seoTitle(v), tags=seoTags(v), desc=seoDesc(v);
+  const title=seoTitle(v), tags=seoTags(v), desc=seoDesc(v), style=fullStyle(v);
   d.innerHTML=`${head}
-    <div class="plabel">🎵 SUNO — STYLE <button class="copy">copy</button></div><pre>${esc(v.style)}</pre>
+    <div class="plabel">🎵 SUNO — STYLE <button class="copy">copy</button></div><pre>${esc(style)}</pre>
     <div class="plabel">🎵 SUNO — LYRICS <button class="copy">copy</button></div><pre>${esc(v.lyr)}</pre>
     <div class="plabel">▶ YOUTUBE — TITLE <button class="copy">copy</button></div><pre>${esc(title)}</pre>
     <div class="plabel">▶ YOUTUBE — TAGS <button class="copy">copy</button></div><pre>${esc(tags)}</pre>
     <div class="plabel">▶ YOUTUBE — DESCRIPTION <button class="copy">copy</button></div><pre>${esc(desc)}</pre>`;
   const [bS,bL,bT,bTg,bD]=d.querySelectorAll(".copy");
-  bS.onclick=()=>cp(bS,v.style); bL.onclick=()=>cp(bL,v.lyr);
+  bS.onclick=()=>cp(bS,style); bL.onclick=()=>cp(bL,v.lyr);
   bT.onclick=()=>cp(bT,title); bTg.onclick=()=>cp(bTg,tags); bD.onclick=()=>cp(bD,desc);
   return d;}
 const el=document.getElementById("cards");
