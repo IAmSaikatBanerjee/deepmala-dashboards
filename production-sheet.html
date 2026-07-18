@@ -3,242 +3,153 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>🎬 Deepmala — Production Sheet (Suno → Filmora → YouTube)</title>
+<title>Deepmala — Song List</title>
 <style>
-  :root{--navy:#0a1440;--gold:#FFD54A;--ink:#e8ecff;--muted:#8b93c9;--green:#38d39f;--amber:#ffb43a;--card:#141d54;--pink:#ff9ae8;}
+  :root{--gold:#FFD54A;--ink:#e8ecff;--muted:#9aa2d0;--card:#141d54;--line:#23306e;--green:#38d39f;}
   *{box-sizing:border-box}
-  body{margin:0;background:linear-gradient(160deg,#060b24,#0a1440 40%,#0d1a4d);color:var(--ink);
-       font-family:-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.55;padding:0 0 90px}
-  header{padding:24px 32px;border-bottom:1px solid #23306e;position:sticky;top:0;
-         background:rgba(8,16,50,.94);backdrop-filter:blur(8px);z-index:9}
-  h1{margin:0;font-size:22px;color:var(--gold)}
-  h1 small{display:block;font-size:12.5px;color:var(--muted);font-weight:400;margin-top:4px}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
-  h2{color:var(--gold);font-size:18px;border-left:4px solid var(--gold);padding-left:12px;margin:34px 0 14px}
-  .goals{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
-  .goal{background:var(--card);border:1px solid #2b3a80;border-radius:14px;padding:16px 18px}
-  .goal b{color:var(--gold)}
-  .box{background:#101a4d;border:1px solid #23306e;border-radius:12px;padding:14px 16px;font-size:14px;margin:10px 0}
-  .box ul{margin:6px 0 0;padding-left:20px} .box li{margin:4px 0}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .card{background:var(--card);border:1px solid #23306e;border-radius:14px;padding:16px 18px;position:relative}
-  .rank{position:absolute;top:-10px;left:-10px;background:var(--gold);color:#0a1440;font-weight:800;font-size:13px;
-        width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px #0006}
-  .deity{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
-  .card h3{margin:2px 0 8px;font-size:15.5px;color:var(--ink)}
-  .tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
-  .tag{font-size:11px;padding:2px 9px;border-radius:20px;border:1px solid #2b3a80;background:#1a2668}
-  .tag.g{background:#123d2e;border-color:#1e6b4f;color:var(--green)}
-  .tag.y{background:#3a2f00;border-color:#7a5a10;color:var(--amber)}
-  .tag.hrs{background:#10233d;border-color:#2b5a80;color:#7fc4ff}
-  .tag.trend{background:#3a0033;border-color:#7a1a6a;color:var(--pink)}
-  .plabel{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:12px 0 4px;display:flex;justify-content:space-between;align-items:center}
-  pre{background:#0b1330;border:1px solid #23306e;border-radius:8px;padding:10px 12px;margin:0;
-      font-size:12px;white-space:pre-wrap;color:#dfe6ff;font-family:ui-monospace,Menlo,monospace}
-  .copy{cursor:pointer;background:#23306e;border:1px solid #35468f;color:var(--gold);font-size:11px;
-        padding:2px 10px;border-radius:6px}
-  .copy:active{transform:scale(.95)} .copy.ok{background:#123d2e;color:var(--green);border-color:#1e6b4f}
-  table{width:100%;border-collapse:collapse;font-size:13px;background:var(--card);border-radius:12px;overflow:hidden}
-  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid #23306e;vertical-align:top}
-  th{background:#0f1a4d;color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
-  .soon{color:var(--pink);font-weight:700}
-  .ok2{color:var(--green)}
-  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
-  .steps li{counter-increment:s;background:var(--card);border:1px solid #23306e;border-radius:10px;padding:10px 14px 10px 44px;margin:8px 0;position:relative;font-size:14px}
-  .steps li::before{content:counter(s);position:absolute;left:12px;top:10px;background:var(--gold);color:#0a1440;font-weight:800;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
-  a{color:var(--gold)}
-  @media(max-width:820px){.goals,.grid{grid-template-columns:1fr}}
+  body{margin:0;background:#0a1440;color:var(--ink);font-family:-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;padding:0 0 80px}
+  header{padding:20px 22px;border-bottom:1px solid var(--line)}
+  h1{margin:0;font-size:20px;color:var(--gold)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 22px}
+  .setup{background:#211900;border:1px solid #7a5a10;border-radius:12px;padding:16px 18px;margin:20px 0}
+  .setup h2{color:var(--gold);font-size:16px;margin:0 0 10px}
+  .setup ol{margin:0;padding-left:22px} .setup li{margin:7px 0;font-size:15px}
+  .song{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+  .song h3{margin:0 0 12px;font-size:17px;color:var(--gold)}
+  .song h3 .num{display:inline-block;background:var(--gold);color:#0a1440;font-weight:800;border-radius:6px;padding:1px 9px;margin-right:8px}
+  .song h3 .due{color:#ff9ae8;font-size:13px;font-weight:600}
+  .lab{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:12px 0 4px}
+  pre{background:#0b1330;border:1px solid var(--line);border-radius:8px;padding:11px 13px;margin:0;font-size:13px;white-space:pre-wrap;color:#dfe6ff;font-family:ui-monospace,Menlo,monospace}
+  .copy{cursor:pointer;background:#23306e;border:1px solid #35468f;color:var(--gold);font-size:12px;padding:3px 12px;border-radius:6px}
+  .copy.ok{background:#123d2e;color:var(--green);border-color:#1e6b4f}
+  details{margin-top:10px} summary{cursor:pointer;color:var(--muted);font-size:13px}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-  <h1>🎬 Deepmala — Production Sheet
-  <small>Suno → Filmora → YouTube · everything to produce content for the next 3–4 weeks · goal: 4,000 watch-hours</small></h1>
-</div></header>
+<header><div class="wrap"><h1>🪔 Deepmala — Song List</h1></div></header>
 <div class="wrap">
 
-  <div class="box" style="font-size:15px">
-    <b>3 steps:</b> &nbsp;1️⃣ Pick a song below &nbsp;→&nbsp; 2️⃣ In Suno: <b>Create → Custom</b>, paste <b>STYLE</b> into the "Styles" box + <b>LYRICS</b> into the "Lyrics" box, turn <b>Instrumental OFF</b>, generate &nbsp;→&nbsp; 3️⃣ Loop the 2–3 min clip to 1 hr in Filmora, upload.
-    &nbsp; <a href="#" onclick="document.getElementById('more').open=true;this.blur();return false;">more tips ▾</a>
-  </div>
-  <details id="more" class="box" style="margin-top:0">
-    <summary style="cursor:pointer;color:var(--gold)">ℹ️ Tips &amp; the why (optional — read once)</summary>
-    <ul style="margin-top:10px">
-      <li><b>Goal:</b> 4,000 watch-hours. Long background loops (sleep/study/chant) = fastest path. Produce 🟢 GREEN cards first.</li>
-      <li><b>Suno free:</b> Custom mode gives you the "Styles" and "Lyrics" boxes. Paste as-is — already formatted right.</li>
-      <li><b>Never edit the lyrics format</b> — only <code>[Chorus]/[Verse]/[Instrumental]</code> tags belong there, no instrument words, no dots.</li>
-      <li><b>Sound identity (auto-added to every Style):</b> authentic Hindu Sanatan, Indian classical, soft sweet enchanting voice, Sanskrit diction, temple feel. No western pop/synth, no qawwali/sufi, no gospel/church. Serving the listener &gt; the numbers.</li>
-      <li><b>On upload:</b> open each card's "YouTube" section for ready title/tags/description. Set AI-content disclosure = YES.</li>
-    </ul>
-  </details>
-
-  <h2>🎵 Songs — ranked (produce top-down)</h2>
-  <div class="grid" id="cards"></div>
-
-  <h2>🔥 Festival songs — produce ahead of each date</h2>
-  <details class="box" style="margin-bottom:10px"><summary style="cursor:pointer;color:var(--gold)">📅 Festival dates &amp; produce-by calendar</summary>
-    <div style="margin:8px 0 6px;font-size:13px;color:var(--muted)">Produce ~10 days before so the algorithm ranks you before peak searches. 🟣 = act now.</div>
-    <table id="cal"><thead><tr>
-      <th>Festival</th><th>Date</th><th>Days out</th><th>Produce by</th><th>Keywords</th><th>Deity</th>
-    </tr></thead><tbody></tbody></table>
-  </details>
-  <div class="grid" id="trendcards"></div>
-
-  <details class="box"><summary style="cursor:pointer;color:var(--gold);font-size:16px">🎬 Filmora loop workflow + 3-week schedule</summary>
-    <ol class="steps" style="margin-top:12px">
-      <li>Import the Suno mp3. Trim to a clean bar (cut any intro silence / messy tail so the join is smooth).</li>
-      <li>Copy the clip and paste end-to-end (or right-click → repeat) until the timeline hits 1 hour (8 hrs for sleep). Crossfade ~0.5s at each join if you hear a seam.</li>
-      <li>Add your still image / slow zoom (Ken Burns) of the deity as the video track — one calm visual is enough.</li>
-      <li>Export 1080p, 24–30fps. For a Short: duplicate, crop 9:16, trim to 30–45s of the strongest passage.</li>
-      <li>Upload → title with keyword + "1 Hour" → paste description + affiliate links → thumbnail → AI-disclosure YES.</li>
+  <div class="setup">
+    <h2>⚙️ Do this ONCE in Suno (before you start)</h2>
+    <ol>
+      <li>Open <b>suno.com</b> and sign in.</li>
+      <li>Click <b>Create</b>.</li>
+      <li>Turn <b>Custom</b> mode <b>ON</b>. Now you see a <b>Lyrics</b> box and a <b>Styles</b> box.</li>
+      <li>Turn <b>Instrumental OFF</b>. (Only for song 5 "Flute" turn it ON.)</li>
+      <li>Pick the <b>highest model</b> available to you (e.g. v4 / v4.5).</li>
     </ol>
-    <div style="margin-top:10px"><b>3-week schedule:</b>
-    <ul>
-      <li><b>Week 1:</b> 8-hr Sleep + top 🟢 (Shiva 108, Hare Krishna, Gayatri, Krishna-anxiety, Flute) + <b>Guru Purnima</b> (due now).</li>
-      <li><b>Week 2:</b> remaining 🟢 (Hanuman, Durga, Saraswati-study) + start <b>Raksha Bandhan</b> &amp; <b>Janmashtami</b>.</li>
-      <li><b>Week 3:</b> 🟡 (Lakshmi, Ganesha, Achyutam, Govind) for data + publish festival tracks + <b>Ganesh Chaturthi</b>.</li>
-    </ul></div>
-  </details>
+  </div>
 
-  <p style="color:var(--muted);font-size:12px;margin-top:30px">Source data: real YouTube-API demand check (<code>factory/demand_report.json</code>) + festival calendar (drikpanchang, New Delhi). Full prompt playbook: <code>bhajan-factory/SUNO_PROMPTS.md</code>. Re-verify tithi dates within a couple days of each festival.</p>
+  <div class="setup" style="background:#0d2e22;border-color:#1e6b4f">
+    <h2 style="color:var(--green)">▶ For EACH song</h2>
+    <ol>
+      <li>Copy <b>STYLE</b> → paste in Suno <b>Styles</b> box.</li>
+      <li>Copy <b>LYRICS</b> → paste in Suno <b>Lyrics</b> box.</li>
+      <li>Click Create. Keep the better of the 2 clips. Download it.</li>
+      <li>In Filmora: repeat the clip until 1 hour (8 hours for song 1 Sleep). Add one image. Export.</li>
+      <li>Upload to YouTube. Open the song's "YouTube" line here for the title, tags, description. Set <b>AI content = YES</b>.</li>
+    </ol>
+  </div>
+
+  <div id="list"></div>
 </div>
 
 <script>
 const P=[
- {r:1,id:"010",deity:"Universal · SLEEP",kw:"om chanting for sleep",win:"y",demand:"STRONG",hrs:"8-hr · watch-time king",
+ {id:"010",name:"Om Chanting for Sleep",kw:"om chanting for sleep",deity:"Universal",
   style:"Deep sustained Om chanting for sleep, slow male and female choir holding long resonant Om, tanpura drone underneath, soft reverb, very slow 50 bpm, warm dark and healing, gentle and continuous, no drums, no fade out",
   lyr:"[Chorus]\nOm\nOm\nOm\nOm\n\n[Chorus]\nOm\nOm\nOm\nOm"},
- {r:2,id:"002",deity:"Shiva",kw:"om namah shivaya 108 times",win:"g",demand:"STRONG",hrs:"meditation loop",
+ {id:"002",name:"Om Namah Shivaya",kw:"om namah shivaya 108 times",deity:"Shiva",
   style:"Deep meditative Shiva chant, resonant male chorus in unison, tanpura drone, rudra veena, subtle hand percussion, hypnotic 60 bpm, powerful and calming, no fade out",
   lyr:"[Chorus]\nOm Namah Shivaya\nOm Namah Shivaya\nOm Namah Shivaya\nOm Namah Shivaya\n\n[Instrumental]\n\n[Chorus]\nOm Namah Shivaya\nOm Namah Shivaya\nOm Namah Shivaya\nOm Namah Shivaya"},
- {r:3,id:"007",deity:"Krishna",kw:"hare krishna mahamantra",win:"g",demand:"STRONG",hrs:"addictive kirtan",
+ {id:"007",name:"Hare Krishna Mahamantra",kw:"hare krishna mahamantra",deity:"Krishna",
   style:"Blissful Hare Krishna kirtan, joyful male and female chorus, mridanga, kartals, harmonium, uplifting 74 bpm, ecstatic and devotional, no fade out",
   lyr:"[Chorus]\nHare Krishna Hare Krishna\nKrishna Krishna Hare Hare\nHare Rama Hare Rama\nRama Rama Hare Hare\n\n[Chorus]\nHare Krishna Hare Krishna\nKrishna Krishna Hare Hare\nHare Rama Hare Rama\nRama Rama Hare Hare"},
- {r:4,id:"005",deity:"Universal",kw:"gayatri mantra 108 times fast",win:"g",demand:"STRONG",hrs:"daily-ritual loop",
+ {id:"005",name:"Gayatri Mantra",kw:"gayatri mantra 108 times fast",deity:"Universal",
   style:"Sacred Gayatri Mantra, blended male and female chorus, tanpura, bansuri flute, subtle strings, steady 72 bpm, uplifting and meditative, no fade out",
   lyr:"[Chorus]\nOm Bhur Bhuvah Swaha\nTat Savitur Varenyam\nBhargo Devasya Dhimahi\nDhiyo Yo Nah Prachodayat\n\n[Instrumental]\n\n[Chorus]\nOm Bhur Bhuvah Swaha\nTat Savitur Varenyam\nBhargo Devasya Dhimahi\nDhiyo Yo Nah Prachodayat"},
- {r:5,id:"A1",deity:"Krishna · INSTRUMENTAL",kw:"krishna flute music for peace",win:"g",demand:"STRONG",hrs:"background · super loopable",
+ {id:"A1",name:"Krishna Flute (Instrumental)",kw:"krishna flute music for peace",deity:"Krishna",inst:1,
   style:"Peaceful Krishna bansuri flute instrumental, solo bamboo flute lead, tanpura drone, soft tabla, gentle temple ambience, serene 64 bpm, meditative and flowing, no fade out",
-  lyr:"Turn INSTRUMENTAL ON in Suno and leave the Lyrics box EMPTY. All direction is in the Style box above."},
- {r:6,id:"009",deity:"Saraswati · STUDY",kw:"saraswati mantra for study",win:"g",demand:"STRONG",hrs:"study sessions = long views",
+  lyr:"TURN INSTRUMENTAL ON. Leave the Lyrics box EMPTY."},
+ {id:"009",name:"Saraswati Mantra (Study)",kw:"saraswati mantra for study",deity:"Saraswati",
   style:"Gentle calm Saraswati bhajan, soft female chorus, veena, bansuri flute, clear focusing 66 bpm, serene and light, no fade out",
   lyr:"[Chorus]\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\n\n[Instrumental]\n\n[Chorus]\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah\nOm Aim Saraswatyai Namah"},
- {r:7,id:"001",deity:"Krishna",kw:"krishna mantra for anxiety",win:"g",demand:"STRONG",hrs:"calm loop",
+ {id:"001",name:"Om Namo Bhagavate Vasudevaya",kw:"krishna mantra for anxiety",deity:"Krishna",
   style:"Peaceful Krishna devotional bhajan, warm male and female chorus, tanpura drone, soft tabla, bansuri flute, temple bells, calming 68 bpm, soothing and meditative, no fade out",
   lyr:"[Chorus]\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\n\n[Instrumental]\n\n[Chorus]\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya"},
- {r:8,id:"003",deity:"Hanuman",kw:"hanuman mantra for strength",win:"g",demand:"STRONG",hrs:"morning loop",
+ {id:"003",name:"Om Hanumate Namah",kw:"hanuman mantra for strength",deity:"Hanuman",
   style:"Uplifting powerful Hanuman bhajan, strong male chorus, dholak, harmonium, temple bells, energizing 72 bpm, devotional and bright, no fade out",
   lyr:"[Chorus]\nOm Hanumate Namah\nOm Sri Hanumate Namah\nOm Hanumate Namah\nOm Sri Hanumate Namah\n\n[Instrumental]\n\n[Chorus]\nOm Hanumate Namah\nOm Sri Hanumate Namah\nOm Hanumate Namah\nOm Sri Hanumate Namah"},
- {r:9,id:"008",deity:"Durga",kw:"durga mantra for protection",win:"g",demand:"STRONG",hrs:"protective loop",
+ {id:"008",name:"Om Dum Durgayei Namah",kw:"durga mantra for protection",deity:"Durga",
   style:"Powerful serene Durga bhajan, strong female chorus, tabla, harmonium, temple bells, majestic 68 bpm, protective and devotional, no fade out",
   lyr:"[Chorus]\nOm Dum Durgayei Namah\nOm Dum Durgayei Namah\nOm Dum Durgayei Namah\nOm Dum Durgayei Namah\n\n[Instrumental]\n\n[Chorus]\nOm Dum Durgayei Namah\nOm Dum Durgayei Namah\nOm Dum Durgayei Namah\nOm Dum Durgayei Namah"},
- {r:10,id:"011",deity:"Jagannath",kw:"jagannath bhajan",win:"g",demand:"STRONG",trend:1,hrs:"Rath Yatra window",
+ {id:"011",name:"Jagannath Bhajan",kw:"jagannath bhajan",deity:"Jagannath",
   style:"Festive Odia-style Jagannath bhajan, devotional male and female chorus, mardala drum, harmonium, cymbals, conch, joyful 72 bpm, sacred and celebratory, no fade out",
   lyr:"[Chorus]\nJai Jagannath\nJai Jagannath\nJai Jagannath\nJai Jagannath\n\n[Verse]\nJagannatha Swami\nNayana Patha Gami\nBhavatu Me\n\n[Chorus]\nJai Jagannath\nJai Jagannath\nJai Jagannath\nJai Jagannath"},
- {r:11,id:"A2",deity:"Krishna",kw:"achyutam keshavam",win:"y",demand:"STRONG",hrs:"popular bhajan",
+ {id:"A2",name:"Achyutam Keshavam",kw:"achyutam keshavam",deity:"Krishna",
   style:"Sweet melodious Krishna bhajan, tender male and female chorus, harmonium, bansuri flute, soft tabla, warm 70 bpm, devotional and flowing, no fade out",
   lyr:"[Chorus]\nAchyutam Keshavam Krishna Damodaram\nRama Naarayanam Janaki Vallabham\nAchyutam Keshavam Krishna Damodaram\nRama Naarayanam Janaki Vallabham\n\n[Instrumental]\n\n[Chorus]\nAchyutam Keshavam Krishna Damodaram\nRama Naarayanam Janaki Vallabham"},
- {r:12,id:"A3",deity:"Krishna",kw:"govind bolo hari gopal bolo",win:"y",demand:"STRONG",hrs:"call-response kirtan",
+ {id:"A3",name:"Govind Bolo Hari Gopal Bolo",kw:"govind bolo hari gopal bolo",deity:"Krishna",
   style:"Joyful call and response kirtan, lead voice answered by chorus, mridanga, kartals, harmonium, celebratory 74 bpm, bright and devotional, no fade out",
   lyr:"[Chorus]\nGovind Bolo Hari Gopal Bolo\nRadha Raman Hari Govind Bolo\nGovind Bolo Hari Gopal Bolo\nRadha Raman Hari Govind Bolo\n\n[Chorus]\nGovind Bolo Hari Gopal Bolo\nRadha Raman Hari Govind Bolo"},
- {r:13,id:"004",deity:"Lakshmi",kw:"lakshmi mantra for wealth",win:"y",demand:"STRONG",hrs:"data (harder)",
+ {id:"004",name:"Om Shreem Mahalakshmiyei Namah",kw:"lakshmi mantra for wealth",deity:"Lakshmi",
   style:"Auspicious sweet Lakshmi bhajan, gentle female chorus, sitar, bansuri flute, soft bells, warm 66 bpm, abundant and serene, no fade out",
   lyr:"[Chorus]\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\n\n[Instrumental]\n\n[Chorus]\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah"},
- {r:14,id:"006",deity:"Ganesha",kw:"ganesh mantra for success",win:"y",demand:"STRONG",hrs:"data (harder)",
+ {id:"006",name:"Om Gan Ganpataye Namah",kw:"ganesh mantra for success",deity:"Ganesha",
   style:"Joyful warm Ganesha bhajan, bright male and female chorus, mridangam, bansuri flute, bells, hopeful 70 bpm, celebratory and auspicious, no fade out",
   lyr:"[Chorus]\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\n\n[Instrumental]\n\n[Chorus]\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah"},
-];
-
-// festival trend-jack prompts — one per upcoming festival (traditional/public-domain lyrics only)
-const T=[
- {id:"Guru Purnima",when:"Jul 29",deity:"Guru vandana",kw:"guru purnima mantra",
+ {id:"Guru Purnima",name:"Guru Purnima Bhajan",due:"make before Jul 29",kw:"guru purnima mantra",deity:"Universal",
   style:"Reverent guru vandana bhajan, warm male and female chorus, harmonium, tanpura, bansuri flute, soft tabla, devotional 66 bpm, grateful and serene, no fade out",
   lyr:"[Chorus]\nGurur Brahma Gurur Vishnu\nGurur Devo Maheshwaraha\nGurur Sakshat Param Brahma\nTasmai Shri Gurave Namaha\n\n[Instrumental]\n\n[Chorus]\nGurur Brahma Gurur Vishnu\nGurur Devo Maheshwaraha\nGurur Sakshat Param Brahma\nTasmai Shri Gurave Namaha"},
- {id:"Raksha Bandhan",when:"Aug 28",deity:"Festive blessing",kw:"raksha bandhan bhajan",
+ {id:"Raksha Bandhan",name:"Raksha Bandhan Bhajan",due:"make before Aug 28",kw:"raksha bandhan bhajan",deity:"Universal",
   style:"Warm festive devotional bhajan, gentle male and female chorus, harmonium, bansuri flute, soft bells, joyful 70 bpm, protective and uplifting, no fade out",
   lyr:"[Chorus]\nOm Shanti Om Shanti Om\nRaksha Karo Prabhu Raksha Karo\nOm Shanti Om Shanti Om\nRaksha Karo Prabhu Raksha Karo\n\n[Chorus]\nOm Shanti Om Shanti Om\nRaksha Karo Prabhu Raksha Karo"},
- {id:"Janmashtami",when:"Sep 04",deity:"Krishna",kw:"krishna janmashtami bhajan",
+ {id:"Janmashtami",name:"Krishna Janmashtami Bhajan",due:"make before Sep 4",kw:"krishna janmashtami bhajan",deity:"Krishna",
   style:"Celebratory Janmashtami kirtan, joyful male and female chorus, mridanga, kartals, harmonium, bansuri flute, festive 74 bpm, blissful and bright, no fade out",
   lyr:"[Chorus]\nHathi Ghoda Palki\nJai Kanhaiya Lal Ki\nNand Ghar Anand Bhayo\nJai Kanhaiya Lal Ki\n\n[Verse]\nHare Krishna Hare Krishna\nKrishna Krishna Hare Hare\n\n[Chorus]\nHathi Ghoda Palki\nJai Kanhaiya Lal Ki"},
- {id:"Ganesh Chaturthi",when:"Sep 14",deity:"Ganesha",kw:"ganesh chaturthi mantra",
+ {id:"Ganesh Chaturthi",name:"Ganesh Chaturthi Bhajan",due:"make before Sep 14",kw:"ganesh chaturthi mantra",deity:"Ganesha",
   style:"Festive Ganesh Chaturthi bhajan, bright male and female chorus, dhol, mridangam, bells, harmonium, celebratory 72 bpm, auspicious and joyful, no fade out",
   lyr:"[Chorus]\nGanpati Bappa Morya\nMangal Murti Morya\nGanpati Bappa Morya\nMangal Murti Morya\n\n[Verse]\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\n\n[Chorus]\nGanpati Bappa Morya\nMangal Murti Morya"},
- {id:"Navratri",when:"Oct 11",deity:"Durga",kw:"navratri durga mantra",
+ {id:"Navratri",name:"Navratri Durga Bhajan",due:"make before Oct 11",kw:"navratri durga mantra",deity:"Durga",
   style:"Powerful Navratri devi bhajan, strong female chorus, dhol, tabla, harmonium, temple bells, majestic 72 bpm, devotional and uplifting, no fade out",
   lyr:"[Chorus]\nAmbe Tu Hai Jagdambe Kali\nJai Durga Jai Jai Ma\nAmbe Tu Hai Jagdambe Kali\nJai Durga Jai Jai Ma\n\n[Verse]\nOm Dum Durgayei Namah\nOm Dum Durgayei Namah\n\n[Chorus]\nAmbe Tu Hai Jagdambe Kali\nJai Durga Jai Jai Ma"},
- {id:"Diwali / Lakshmi Puja",when:"Nov 08",deity:"Lakshmi",kw:"diwali lakshmi mantra",
+ {id:"Diwali",name:"Diwali Lakshmi Bhajan",due:"make before Nov 8",kw:"diwali lakshmi mantra",deity:"Lakshmi",
   style:"Auspicious Diwali Lakshmi bhajan, gentle female chorus, sitar, bansuri flute, soft bells, harmonium, warm 68 bpm, abundant and serene, no fade out",
   lyr:"[Chorus]\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\n\n[Instrumental]\n\n[Chorus]\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah"},
 ];
 
-// Authenticity clause appended to EVERY Style box — guarantees an authentic
-// Hindu / Sanatan Indian-classical sound, soft & enchanting, no non-dharmic influence.
 const AUTH=" Authentic Hindu Sanatan devotional bhajan, North Indian classical raga-based, soft sweet soothing and enchanting voice with clear traditional Sanskrit pronunciation, sacred temple atmosphere, only traditional Indian instruments (tanpura, sitar, sarangi, bansuri, veena, santoor, tabla, mridanga, harmonium, temple bells); strictly no western pop, no EDM or synths, no qawwali or sufi, no gospel or church choir — purely Indian classical devotional.";
-const fullStyle=v=>v.style+AUTH;
-
-function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-function cp(btn,txt){navigator.clipboard.writeText(txt).then(()=>{btn.textContent="copied ✓";btn.classList.add("ok");
-  setTimeout(()=>{btn.textContent="copy";btn.classList.remove("ok");},1400);});}
-
-// --- YouTube upload SEO, derived per card (title, tags, description) ---
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const LEN=v=>/sleep/.test(v.kw)?"8 Hours":"1 Hour";
 const tc=s=>s.replace(/\b\w/g,c=>c.toUpperCase());
-const deityWord=v=>v.deity.split(/[ ·]/)[0].toLowerCase();
-function seoTitle(v){return `${tc(v.kw)} 🕉️ ${LEN(v)} Peaceful Chant for Meditation, Peace & Positive Energy | Deepmala Bhajans`;}
-function seoTags(v){const b=[v.kw,LEN(v).toLowerCase(),`${deityWord(v)} mantra`,`${deityWord(v)} bhajan`,
-  "bhajan","mantra","devotional music","meditation music","bhakti song","peaceful music","chanting","spiritual music","indian classical","temple music"];
-  return [...new Set(b.filter(Boolean))].join(", ");}
-function seoDesc(v){return `${tc(v.kw)} — a peaceful ${LEN(v).toLowerCase()} devotional chant from Deepmala Bhajans. `+
-`Play it for meditation, prayer, focus, healing or sleep, and let the sacred sound fill your space with calm and positive energy.\n\n`+
-`🙏 Like, subscribe & share for daily bhajans and mantras.\n🔔 Turn on the bell so you never miss a new upload.\n\n`+
-`🛍️ Devotional essentials we recommend (affiliate): <add your product links here>\n\n`+
-`⚠️ This audio was created with AI music tools. Ancient mantra text is public domain.\n\n`+
-`#bhajan #mantra #${deityWord(v)} #meditation #devotional #bhakti`;}
-function makeCard(v,opts){const d=document.createElement("div");d.className="card";
-  const head=opts.trend
-    ? `<div class="rank" style="background:#7a1a6a;color:#ff9ae8">🔥</div>
-       <div class="deity">${v.deity} · trend</div><h3>🎯 ${v.kw}</h3>
-       <div class="tags"><span class="tag trend">🔥 ${v.id} · ${v.when}</span><span class="tag hrs">produce ahead</span></div>`
-    : `<div class="rank">${v.r}</div>
-       <div class="deity">${v.deity} · #${v.id}</div><h3>🎯 ${v.kw}</h3>
-       <div class="tags">${v.win==="g"?'<span class="tag g">🟢 winnable</span>':'<span class="tag y">🟡 mixed</span>'}<span class="tag">demand ${v.demand}</span><span class="tag hrs">⏱ ${v.hrs}</span>${v.trend?'<span class="tag trend">🔥 trend</span>':''}</div>`;
-  const title=seoTitle(v), tags=seoTags(v), desc=seoDesc(v), style=fullStyle(v);
-  d.innerHTML=`${head}
-    <div class="plabel">STYLE — paste in Suno "Styles" box <button class="copy">copy</button></div><pre>${esc(style)}</pre>
-    <div class="plabel">LYRICS — paste in Suno "Lyrics" box <button class="copy">copy</button></div><pre>${esc(v.lyr)}</pre>
-    <details><summary>▶ YouTube title / tags / description (for when you upload)</summary>
-      <div class="plabel">TITLE <button class="copy">copy</button></div><pre>${esc(title)}</pre>
-      <div class="plabel">TAGS <button class="copy">copy</button></div><pre>${esc(tags)}</pre>
-      <div class="plabel">DESCRIPTION <button class="copy">copy</button></div><pre>${esc(desc)}</pre>
-    </details>`;
-  const [bS,bL,bT,bTg,bD]=d.querySelectorAll(".copy");
-  bS.onclick=()=>cp(bS,style); bL.onclick=()=>cp(bL,v.lyr);
-  bT.onclick=()=>cp(bT,title); bTg.onclick=()=>cp(bTg,tags); bD.onclick=()=>cp(bD,desc);
-  return d;}
-const el=document.getElementById("cards");
-P.forEach(v=>el.appendChild(makeCard(v,{})));
-const te=document.getElementById("trendcards");
-T.forEach(v=>te.appendChild(makeCard(v,{trend:true})));
+const dw=v=>v.deity.toLowerCase();
+const seoTitle=v=>`${tc(v.kw)} 🕉️ ${LEN(v)} Peaceful Chant for Meditation, Peace & Positive Energy | Deepmala Bhajans`;
+const seoTags=v=>[...new Set([v.kw,LEN(v).toLowerCase(),`${dw(v)} mantra`,`${dw(v)} bhajan`,"bhajan","mantra","devotional music","meditation music","bhakti song","peaceful music","chanting","spiritual music"].filter(Boolean))].join(", ");
+const seoDesc=v=>`${tc(v.kw)} — a peaceful ${LEN(v).toLowerCase()} devotional chant from Deepmala Bhajans. Play it for meditation, prayer, focus, healing or sleep.\n\n🙏 Like, subscribe & share for daily bhajans.\n🔔 Turn on the bell for new uploads.\n\n🛍️ Devotional essentials (affiliate): <add your product links here>\n\n⚠️ Audio created with AI music tools. Ancient mantra text is public domain.\n\n#bhajan #mantra #${dw(v)} #meditation #devotional`;
 
-// live festival countdown
-const CAL=[
- {n:"Jagannath Rath Yatra",d:"2026-07-16",dei:"Jagannath",kw:["jagannath bhajan","rath yatra bhajan"]},
- {n:"Guru Purnima",d:"2026-07-29",dei:"Universal (guru)",kw:["guru purnima mantra","guru stotram"]},
- {n:"Raksha Bandhan",d:"2026-08-28",dei:"Universal",kw:["raksha bandhan bhajan","raksha bandhan mantra"]},
- {n:"Krishna Janmashtami",d:"2026-09-04",dei:"Krishna",kw:["krishna janmashtami bhajan","janmashtami special bhajan"]},
- {n:"Ganesh Chaturthi",d:"2026-09-14",dei:"Ganesha",kw:["ganesh chaturthi mantra","ganpati bappa morya bhajan"]},
- {n:"Navratri (start)",d:"2026-10-11",dei:"Durga",kw:["navratri durga mantra","navratri devi bhajan"]},
- {n:"Diwali / Lakshmi Puja",d:"2026-11-08",dei:"Lakshmi",kw:["diwali lakshmi mantra","diwali puja mantra"]},
-];
-const tb=document.querySelector("#cal tbody");
-const now=new Date();now.setHours(0,0,0,0);
-CAL.forEach(f=>{const fd=new Date(f.d);const days=Math.ceil((fd-now)/86400000);
-  const by=new Date(fd);by.setDate(by.getDate()-10);
-  const soon=days<=14&&days>=-9;
-  const daysTxt=days<0?`<span class="ok2">done/window</span>`:`<span class="${soon?'soon':''}">${days} days</span>`;
-  const tr=document.createElement("tr");
-  tr.innerHTML=`<td>${soon?'🟣 ':''}${f.n}</td><td>${f.d}</td><td>${daysTxt}</td>
-    <td>${by.toISOString().slice(0,10)}</td><td>${f.kw.join("<br>")}</td><td>${f.dei}</td>`;
-  tb.appendChild(tr);});
+function block(label,txt){
+  const wrap=document.createElement("div");
+  wrap.innerHTML=`<div class="lab">${label} <button class="copy">copy</button></div><pre>${esc(txt)}</pre>`;
+  wrap.querySelector(".copy").onclick=e=>{navigator.clipboard.writeText(txt).then(()=>{
+    e.target.textContent="copied ✓";e.target.classList.add("ok");
+    setTimeout(()=>{e.target.textContent="copy";e.target.classList.remove("ok");},1400);});};
+  return wrap;
+}
+const list=document.getElementById("list");
+P.forEach((v,i)=>{
+  const style=v.inst?v.style:v.style+AUTH;
+  const s=document.createElement("div");s.className="song";
+  const due=v.due?` <span class="due">(${v.due})</span>`:"";
+  s.innerHTML=`<h3><span class="num">${i+1}</span>${v.name}${due}</h3>`;
+  s.appendChild(block("STYLE → paste in Suno Styles box",style));
+  s.appendChild(block("LYRICS → paste in Suno Lyrics box",v.lyr));
+  const det=document.createElement("details");
+  det.innerHTML=`<summary>YouTube title / tags / description (open when uploading)</summary>`;
+  det.appendChild(block("TITLE",seoTitle(v)));
+  det.appendChild(block("TAGS",seoTags(v)));
+  det.appendChild(block("DESCRIPTION",seoDesc(v)));
+  s.appendChild(det);
+  list.appendChild(s);
+});
 </script>
 </body></html>
