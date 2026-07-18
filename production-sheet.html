@@ -67,7 +67,7 @@
     <ul>
       <li><b>Pick a card below</b> (they're ranked by watch-hour ROI). Copy <b>STYLE</b> → Suno Style box, <b>LYRICS</b> → Suno Lyrics box (Custom Mode, Instrumental OFF, v4.5).</li>
       <li><b>Generate a clean 2–3 min take</b>, keep the better of the 2. Then <b>loop it in Filmora to 1 hour</b> (8 hrs for sleep). Don't chase length inside Suno.</li>
-      <li>On upload: title with the exact keyword + use-case ("1 Hour", "for Sleep", "108 Times"). <b>Set AI-content disclosure = YES.</b></li>
+      <li>On upload: each card also gives you a ready <b>YouTube TITLE, TAGS and DESCRIPTION</b> (copy buttons) — paste them in. Edit the affiliate-links line in the description. <b>Set AI-content disclosure = YES.</b></li>
     </ul>
   </div>
 
@@ -186,6 +186,21 @@ const T=[
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 function cp(btn,txt){navigator.clipboard.writeText(txt).then(()=>{btn.textContent="copied ✓";btn.classList.add("ok");
   setTimeout(()=>{btn.textContent="copy";btn.classList.remove("ok");},1400);});}
+
+// --- YouTube upload SEO, derived per card (title, tags, description) ---
+const LEN=v=>/sleep/.test(v.kw)?"8 Hours":"1 Hour";
+const tc=s=>s.replace(/\b\w/g,c=>c.toUpperCase());
+const deityWord=v=>v.deity.split(/[ ·]/)[0].toLowerCase();
+function seoTitle(v){return `${tc(v.kw)} 🕉️ ${LEN(v)} Peaceful Chant for Meditation, Peace & Positive Energy | Deepmala Bhajans`;}
+function seoTags(v){const b=[v.kw,LEN(v).toLowerCase(),`${deityWord(v)} mantra`,`${deityWord(v)} bhajan`,
+  "bhajan","mantra","devotional music","meditation music","bhakti song","peaceful music","chanting","spiritual music","indian classical","temple music"];
+  return [...new Set(b.filter(Boolean))].join(", ");}
+function seoDesc(v){return `${tc(v.kw)} — a peaceful ${LEN(v).toLowerCase()} devotional chant from Deepmala Bhajans. `+
+`Play it for meditation, prayer, focus, healing or sleep, and let the sacred sound fill your space with calm and positive energy.\n\n`+
+`🙏 Like, subscribe & share for daily bhajans and mantras.\n🔔 Turn on the bell so you never miss a new upload.\n\n`+
+`🛍️ Devotional essentials we recommend (affiliate): <add your product links here>\n\n`+
+`⚠️ This audio was created with AI music tools. Ancient mantra text is public domain.\n\n`+
+`#bhajan #mantra #${deityWord(v)} #meditation #devotional #bhakti`;}
 function makeCard(v,opts){const d=document.createElement("div");d.className="card";
   const head=opts.trend
     ? `<div class="rank" style="background:#7a1a6a;color:#ff9ae8">🔥</div>
@@ -194,11 +209,16 @@ function makeCard(v,opts){const d=document.createElement("div");d.className="car
     : `<div class="rank">${v.r}</div>
        <div class="deity">${v.deity} · #${v.id}</div><h3>🎯 ${v.kw}</h3>
        <div class="tags">${v.win==="g"?'<span class="tag g">🟢 winnable</span>':'<span class="tag y">🟡 mixed</span>'}<span class="tag">demand ${v.demand}</span><span class="tag hrs">⏱ ${v.hrs}</span>${v.trend?'<span class="tag trend">🔥 trend</span>':''}</div>`;
+  const title=seoTitle(v), tags=seoTags(v), desc=seoDesc(v);
   d.innerHTML=`${head}
-    <div class="plabel">STYLE <button class="copy">copy</button></div><pre>${esc(v.style)}</pre>
-    <div class="plabel">LYRICS <button class="copy">copy</button></div><pre>${esc(v.lyr)}</pre>`;
-  const [bS,bL]=d.querySelectorAll(".copy");
+    <div class="plabel">🎵 SUNO — STYLE <button class="copy">copy</button></div><pre>${esc(v.style)}</pre>
+    <div class="plabel">🎵 SUNO — LYRICS <button class="copy">copy</button></div><pre>${esc(v.lyr)}</pre>
+    <div class="plabel">▶ YOUTUBE — TITLE <button class="copy">copy</button></div><pre>${esc(title)}</pre>
+    <div class="plabel">▶ YOUTUBE — TAGS <button class="copy">copy</button></div><pre>${esc(tags)}</pre>
+    <div class="plabel">▶ YOUTUBE — DESCRIPTION <button class="copy">copy</button></div><pre>${esc(desc)}</pre>`;
+  const [bS,bL,bT,bTg,bD]=d.querySelectorAll(".copy");
   bS.onclick=()=>cp(bS,v.style); bL.onclick=()=>cp(bL,v.lyr);
+  bT.onclick=()=>cp(bT,title); bTg.onclick=()=>cp(bTg,tags); bD.onclick=()=>cp(bD,desc);
   return d;}
 const el=document.getElementById("cards");
 P.forEach(v=>el.appendChild(makeCard(v,{})));
