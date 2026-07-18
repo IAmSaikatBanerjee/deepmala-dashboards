@@ -91,6 +91,9 @@
     <th>Festival</th><th>Date</th><th>Days out</th><th>Produce by</th><th>Keywords</th><th>Deity / style seed</th>
   </tr></thead><tbody></tbody></table>
 
+  <h2>🔥 Trend-jack prompts — ready to paste (produce ahead of each festival)</h2>
+  <div class="grid" id="trendcards"></div>
+
   <h2>🎬 Filmora loop workflow</h2>
   <ol class="steps">
     <li>Import the Suno mp3. Trim to a clean bar (cut any intro silence / messy tail so the join is smooth).</li>
@@ -158,21 +161,49 @@ const P=[
   lyr:"[Intro] [bells] [mridangam]\n[Chorus]\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\n[Verse] [bansuri flute]\nOm Gan Ganpataye Namah\nOm Gan Ganpataye Namah\n[Outro] [soften to loop]"},
 ];
 
+// festival trend-jack prompts — one per upcoming festival (traditional/public-domain lyrics only)
+const T=[
+ {id:"Guru Purnima",when:"Jul 29",deity:"Guru vandana",kw:"guru purnima mantra",
+  style:"Reverent guru vandana bhajan, warm male-and-female chorus, harmonium, tanpura, bansuri flute, soft tabla, 66 bpm, devotional and grateful, seamless loop, no fade out",
+  lyr:"[Intro] [tanpura] [harmonium]\n[Chorus] [chorus]\nGurur Brahma Gurur Vishnu\nGurur Devo Maheshwaraha\nGurur Sakshat Param Brahma\nTasmai Shri Gurave Namaha\n[Verse] [bansuri flute]\nGurur Brahma Gurur Vishnu\nGurur Devo Maheshwaraha\n[Outro] [harmonium to loop]"},
+ {id:"Raksha Bandhan",when:"Aug 28",deity:"Festive blessing",kw:"raksha bandhan bhajan",
+  style:"Warm festive devotional instrumental with light chant, gentle chorus humming, harmonium, bansuri flute, soft bells, 70 bpm, joyful and protective, seamless loop, no fade out",
+  lyr:"[Intro] [bells] [harmonium]\n[Chorus] [soft chorus]\nOm Shanti Om Shanti Om\nRaksha Karo Prabhu Raksha Karo\nOm Shanti Om Shanti Om\n[Verse] [bansuri flute]\nRaksha Karo Prabhu Raksha Karo\n[Outro] [harmonium to loop]"},
+ {id:"Janmashtami",when:"Sep 04",deity:"Krishna",kw:"krishna janmashtami bhajan",
+  style:"Celebratory Janmashtami kirtan, joyful male-and-female chorus, mridanga, kartals, harmonium, flute, 74 bpm, festive and blissful, seamless loop, no fade out",
+  lyr:"[Intro] [conch] [kartals]\n[Chorus] [full chorus]\nHathi Ghoda Palki, Jai Kanhaiya Lal Ki\nNand Ghar Anand Bhayo, Jai Kanhaiya Lal Ki\n[Verse] [mridanga]\nHare Krishna Hare Krishna\nKrishna Krishna Hare Hare\n[Outro] [kartals to loop]"},
+ {id:"Ganesh Chaturthi",when:"Sep 14",deity:"Ganesha",kw:"ganesh chaturthi mantra",
+  style:"Festive Ganesh Chaturthi bhajan, bright chorus, dhol, mridangam, bells, harmonium, 72 bpm, celebratory and auspicious, seamless loop, no fade out",
+  lyr:"[Intro] [bells] [dhol]\n[Chorus] [full chorus]\nGanpati Bappa Morya, Mangal Murti Morya\nOm Gan Ganpataye Namah\nGanpati Bappa Morya, Mangal Murti Morya\n[Verse] [mridangam]\nVakratunda Mahakaya Suryakoti Samaprabha\n[Outro] [dhol to loop]"},
+ {id:"Navratri",when:"Oct 11",deity:"Durga",kw:"navratri durga mantra",
+  style:"Powerful Navratri devi bhajan, strong female chorus, dhol, tabla, harmonium, temple bells, 72 bpm, majestic and devotional, seamless loop, no fade out",
+  lyr:"[Intro] [temple bells] [dhol]\n[Chorus] [female chorus]\nAmbe Tu Hai Jagdambe Kali\nJai Durga Jai Jai Ma\nOm Dum Durgayei Namah\n[Verse] [tabla]\nOm Dum Durgayei Namah\nOm Dum Durgayei Namah\n[Outro] [dhol to loop]"},
+ {id:"Diwali / Lakshmi Puja",when:"Nov 08",deity:"Lakshmi",kw:"diwali lakshmi mantra",
+  style:"Auspicious Diwali Lakshmi bhajan, gentle female chorus, sitar, bansuri flute, soft bells, harmonium, 68 bpm, warm and abundant, seamless loop, no fade out",
+  lyr:"[Intro] [soft bells] [sitar]\n[Chorus] [female chorus]\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\n[Verse] [bansuri flute]\nOm Shreem Mahalakshmiyei Namah\n[Outro] [sitar to loop]"},
+];
+
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-const el=document.getElementById("cards");
-P.forEach(v=>{const d=document.createElement("div");d.className="card";
-  const winTag=v.win==="g"?'<span class="tag g">🟢 winnable</span>':'<span class="tag y">🟡 mixed</span>';
-  const trend=v.trend?'<span class="tag trend">🔥 trend</span>':'';
-  d.innerHTML=`<div class="rank">${v.r}</div>
-    <div class="deity">${v.deity} · #${v.id}</div><h3>🎯 ${v.kw}</h3>
-    <div class="tags">${winTag}<span class="tag">demand ${v.demand}</span><span class="tag hrs">⏱ ${v.hrs}</span>${trend}</div>
+function cp(btn,txt){navigator.clipboard.writeText(txt).then(()=>{btn.textContent="copied ✓";btn.classList.add("ok");
+  setTimeout(()=>{btn.textContent="copy";btn.classList.remove("ok");},1400);});}
+function makeCard(v,opts){const d=document.createElement("div");d.className="card";
+  const head=opts.trend
+    ? `<div class="rank" style="background:#7a1a6a;color:#ff9ae8">🔥</div>
+       <div class="deity">${v.deity} · trend</div><h3>🎯 ${v.kw}</h3>
+       <div class="tags"><span class="tag trend">🔥 ${v.id} · ${v.when}</span><span class="tag hrs">produce ahead</span></div>`
+    : `<div class="rank">${v.r}</div>
+       <div class="deity">${v.deity} · #${v.id}</div><h3>🎯 ${v.kw}</h3>
+       <div class="tags">${v.win==="g"?'<span class="tag g">🟢 winnable</span>':'<span class="tag y">🟡 mixed</span>'}<span class="tag">demand ${v.demand}</span><span class="tag hrs">⏱ ${v.hrs}</span>${v.trend?'<span class="tag trend">🔥 trend</span>':''}</div>`;
+  d.innerHTML=`${head}
     <div class="plabel">STYLE <button class="copy">copy</button></div><pre>${esc(v.style)}</pre>
     <div class="plabel">LYRICS <button class="copy">copy</button></div><pre>${esc(v.lyr)}</pre>`;
   const [bS,bL]=d.querySelectorAll(".copy");
   bS.onclick=()=>cp(bS,v.style); bL.onclick=()=>cp(bL,v.lyr);
-  el.appendChild(d);});
-function cp(btn,txt){navigator.clipboard.writeText(txt).then(()=>{btn.textContent="copied ✓";btn.classList.add("ok");
-  setTimeout(()=>{btn.textContent="copy";btn.classList.remove("ok");},1400);});}
+  return d;}
+const el=document.getElementById("cards");
+P.forEach(v=>el.appendChild(makeCard(v,{})));
+const te=document.getElementById("trendcards");
+T.forEach(v=>te.appendChild(makeCard(v,{trend:true})));
 
 // live festival countdown
 const CAL=[
