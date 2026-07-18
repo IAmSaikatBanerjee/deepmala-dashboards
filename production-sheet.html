@@ -40,7 +40,7 @@
       <li>Turn <b>Custom</b> mode <b>ON</b>. Now you see a <b>Lyrics</b> box and a <b>Styles</b> box.</li>
       <li>Turn <b>Instrumental OFF</b>. (Only for the "Flute" song turn it ON.)</li>
       <li>Pick the <b>highest model</b> available to you (e.g. v4 / v4.5).</li>
-      <li>Open <b>Advanced Options</b> → set <b>Style Influence HIGH</b> and <b>Weirdness (Creativity) LOW</b>. This makes BOTH clips come out consistently good.</li>
+      <li>Open <b>Advanced Options</b> → set <b>Style Influence 85%</b> and <b>Weirdness (Creativity) 15%</b>. This makes BOTH clips come out consistently good.</li>
     </ol>
   </div>
 
@@ -168,6 +168,16 @@ P.forEach((v,i)=>{
   det.appendChild(block("TITLE",seoTitle(v)));
   det.appendChild(block("TAGS",seoTags(v)));
   det.appendChild(block("DESCRIPTION",seoDesc(v)));
+  const comment=`🙏 ${v.name} | ${LEN(v)} | Authentic ${v.deity} Devotional Bhajan
+
+Listen, meditate, relax, and connect with the divine.
+
+Like and subscribe for daily bhajans 🔔
+
+💬 Drop a comment below if this resonates with you.
+
+🙏 Thank you for your devotion.\n\n#bhajan #${v.deity.toLowerCase()} #mantra #${dw(v)} #devotional #meditation`;
+  det.appendChild(block("FIRST COMMENT (paste as 1st YouTube comment)",comment));
   s.appendChild(det);
   list.appendChild(s);
 });
