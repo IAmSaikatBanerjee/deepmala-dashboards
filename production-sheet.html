@@ -249,7 +249,7 @@ const saveDone=set=>localStorage.setItem(DONE_KEY,JSON.stringify([...set]));
 const doneSet=loadDone();
 const tierLabel={good:"Good",ok:"OK",weak:"Weak",unverified:"Unverified",seasonal:"Seasonal"};
 const list=document.getElementById("list");
-P.forEach((v,i)=>{
+function renderSong(v,i){
   const style=v.inst?v.style:v.style+AUTH;
   const s=document.createElement("div");s.className="song";
   const isChecked=v.done||doneSet.has(v.id);
@@ -286,7 +286,33 @@ P.forEach((v,i)=>{
   const comment=`🙏 ${v.hook}\n\n${asks[i%asks.length]}\n\n${crosslink?crosslink+"\n\n":""}${subs[i%subs.length]}\n\n#bhajan #${v.deity.toLowerCase().replace(/\s+/g,'')} #mantra #${dw(v).replace(/\s+/g,'')} #sanatandharma #devotional`;
   det.appendChild(block("FIRST COMMENT (paste as 1st YouTube comment)",comment));
   s.appendChild(det);
-  list.appendChild(s);
-});
+  return s;
+}
+
+// Priority = what actually gets you to 4,000 hrs / 1,000 subs fastest:
+// verified high-demand + low-competition first. Weak/unverified ideas
+// don't help the goal and are collapsed out of the way, not deleted.
+const tierRank={good:0,ok:1,seasonal:2,weak:3,unverified:4};
+const priority=P.filter(v=>(tierRank[v.tier]??4)<=2);
+const backlog=P.filter(v=>(tierRank[v.tier]??4)>2);
+priority.sort((a,b)=>(tierRank[a.tier]??4)-(tierRank[b.tier]??4));
+
+const introNote=document.createElement("div");
+introNote.style.cssText="color:var(--muted);font-size:13px;margin:0 0 16px";
+introNote.innerHTML=`Sorted by what actually gets you to <b style="color:var(--gold)">4,000 watch-hours / 1,000 subs</b> fastest — verified high-demand, low-competition ideas first. Build top-down.`;
+list.appendChild(introNote);
+
+priority.forEach((v,i)=>list.appendChild(renderSong(v,i+1)));
+
+if(backlog.length){
+  const back=document.createElement("details");
+  back.style.marginTop="20px";
+  back.innerHTML=`<summary>⚪ Low-priority / unverified ideas (${backlog.length}) — won't move the goal, click to expand</summary>`;
+  const backList=document.createElement("div");
+  backList.style.marginTop="10px";
+  backlog.forEach((v,i)=>backList.appendChild(renderSong(v,priority.length+i+1)));
+  back.appendChild(backList);
+  list.appendChild(back);
+}
 </script>
 </body></html>
