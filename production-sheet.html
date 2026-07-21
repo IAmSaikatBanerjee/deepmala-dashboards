@@ -273,6 +273,18 @@ P.forEach((v,i)=>{
   det.appendChild(block("TITLE",seoTitle(v)));
   det.appendChild(block("TAGS",seoTags(v)));
   det.appendChild(block("DESCRIPTION",seoDesc(v)));
+  const related=P.find(o=>o.deity===v.deity&&o.done&&o.link&&o.id!==v.id)||P.find(o=>o.done&&o.link&&o.id!==v.id);
+  const crosslink=related?`👉 You may also love "${related.name}": ${related.link}`:"";
+  const subs=["Jai Sanatan Dharma 🚩 Naya bhajan har hafte — subscribe kar lo taaki koi miss na ho 🔔",
+    "Radhe Radhe! 🌸 Naye bhajan har hafte aate hain — subscribe zaroor karein 🔔",
+    "Har Har Mahadev 🔱 / Jai Shri Krishna 🦚 — subscribe for weekly bhajans 🔔",
+    "Jai Jagannath 🙏 — daily devotion, weekly uploads. Subscribe kar lijiye 🔔"];
+  const asks=[`${v.ask} Comment mein bataiye 👇`,
+    `${v.ask} Share below — apna anubhav zaroor batayein 🙏`,
+    `${v.ask} Tag someone who needs this today 💛`,
+    `${v.ask} Reply with 🙏 if this gave you peace`];
+  const comment=`🙏 ${v.hook}\n\n${asks[i%asks.length]}\n\n${crosslink?crosslink+"\n\n":""}${subs[i%subs.length]}\n\n#bhajan #${v.deity.toLowerCase().replace(/\s+/g,'')} #mantra #${dw(v).replace(/\s+/g,'')} #sanatandharma #devotional`;
+  det.appendChild(block("FIRST COMMENT (paste as 1st YouTube comment)",comment));
   s.appendChild(det);
   list.appendChild(s);
 });
